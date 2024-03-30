@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Management System - Registration</title>
+    <th:block th:replace="fragments/styles :: common"></th:block>
+</head>
+<body class="registration" style="background-color: #32902e">
+<div>
+    <div class="login_wrapper">
+        <section class="login_content">
+            <form th:action="@{/register}" method="post" id="registerform">
+                <h1 style="color: white">Inscription</h1>
+                <div>
+                    <input type="text" style="color: #0f0f0f" class="form-control" placeholder="Full Name" name="fullName" />
+                </div>
+                <div>
+                    <input type="password" style="color: #0f0f0f" class="form-control" placeholder="Password" name="password" />
+                </div>
+                <div>
+                    <a class="btn btn-default submit" href="javascript:void(0)" onclick="document.getElementById('registerform').submit();">Register</a>
+                </div>
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <div class="clearfix"></div>
+                    <br />
+                    <div>
+                        <h1 style="color: white"><i class="fa fa-book"></i>Library Management System</h1>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+</html>
