@@ -1,4 +1,4 @@
-# spark-lms
+# library-management-system
 Library Management System developed in Spring Boot.
 
 
