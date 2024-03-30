@@ -24,7 +24,7 @@ $(document).ready(function() {
 		$('#memberSel').empty().append('<option selected="selected" value="">-- Select Member --</option>');
 		$.each(membersList, function(k, v) {   
 		     $('#memberSel').append($("<option></option>")
-		                    .attr("value",v.id).text(v.firstName + ' ' + v.middleName + (v.lastName?' '+v.lastName:'') )); 
+		                    .attr("value",v.id).text(v.firstName + ' ' + (v.lastName?' ' +v.lastName:'') ));
 		});
 	}
 	
@@ -101,7 +101,7 @@ $(document).ready(function() {
 					member: $('#memberSel').val(),
 					books: getIssuedBookIds().join()
 			}
-			$.post( "/rest/issue/save", issue).done(function (data){
+			$.post( "/issue/save", issue).done(function (data){
 				if( data=='success' ) {
 					window.location = '/issue/new';
 				}

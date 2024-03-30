@@ -7,18 +7,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Spark LMS - Login</title>
+	<title>LMS - Login</title>
 	
 	<th:block th:replace="fragments/styles :: common"></th:block>
 	
 </head>
-<body class="login">
+<body class="login" style="background-color: #32902e">
     <div>
 
+        <div th:if="${param.success}">
+            <div class="alert alert-info">Votre inscription a été bien enregistrée</div>
+        </div>
       <div class="login_wrapper">
           <section class="login_content">
             <form th:action="@{/login}" method="post" id="loginform">
-              <h1>Login Form</h1>
+              <h1 style="color: white">Connexion</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Username" name="username" />
               </div>
@@ -35,9 +38,9 @@
 
                 <div class="clearfix"></div>
                 <br />
-
                 <div>
-                  <h1><i class="fa fa-paw"></i> Spark LMS</h1>
+                  <h1 style="color: white"><i class="fa fa-book" aria-hidden="true"></i></i>Library Management System</h1>
+                    <p style="color: white">Vous n'êtes pas encore inscrit? <a href="/register" style="color: white">Inscrivez-vous ici</a>.</p>
                 </div>
               </div>
             </form>

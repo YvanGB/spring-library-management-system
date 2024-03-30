@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spark LMS - Issue List</title>
+<title>Library Management System - Issue List</title>
 
 <th:block th:replace="fragments/styles :: common"></th:block>
 <th:block th:replace="fragments/styles :: datatable"></th:block>
@@ -41,7 +41,7 @@
 								</thead>
 								<tbody>
 									<tr th:each="i : ${issues}">
-										<td th:text="${i.member.firstName + ' ' + i.member.middleName + ' ' + i.member.lastName}"></td>
+										<td th:if="${i.member != null}" th:text="${i.member.firstName + ' ' + i.member.lastName}"></td>
 										<td>
 											<ul th:id="${'issue_' + i.id}">
 												<th:block th:each="ib : ${i.issuedBooks}">

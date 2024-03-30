@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spark LMS - Member List</title>
+<title>Library Management System - Member List</title>
 
 <th:block th:replace="fragments/styles :: common"></th:block>
 <th:block th:replace="fragments/styles :: datatable"></th:block>
@@ -25,7 +25,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="x_panel">
 						<div class="x_title">
-							<h2>List of Members</h2>
+							<h2>Membres</h2>
 							<div class="clearfix"></div>
 						</div>
 						<div class="x_content">
@@ -42,7 +42,7 @@
 										<th>Full Name</th>
 										<th style="width: 100px;">Type</th>
 										<th style="width: 100px;">Gender</th>
-										<th style="width: 50px;">Age</th>
+<!--										<th style="width: 50px;">Age</th>-->
 										<th style="width: 90px;">Joining Date</th>
 										<th style="width: 50px;">Actions</th>
 									</tr>
@@ -50,16 +50,15 @@
 								<tbody>
 									<tr th:each="m : ${members}">
 										<td
-											th:text="${m.firstName + ' ' + m.middleName + ' ' + m.lastName}"></td>
+											th:text="${m.firstName + ' ' + m.lastName}"></td>
 										<td th:text="${m.type}"></td>
 										<td th:text="${m.gender}"></td>
-										<td
-											th:text="${#dates.year(#dates.createToday()) - #dates.year(m.dateOfBirth)}"></td>
-										<td th:text="${#dates.format(m.joiningDate, 'dd-MMM-yyyy')}"></td>
+<!--										<td th:text="${#dates.year(#dates.createToday()) - #dates.year(m.dateOfBirth)}"></td>-->
+<!--										<td th:text="${#dates.format(m.joiningDate, 'dd-MMM-yyyy')}"></td>-->
 										<td>
 											<a th:href="@{'/member/edit/' + ${m.id}}"><i class="fa fa-edit"></i></a>
 											<a data-toggle="modal" data-target=".remove-member-modal" onclick="removeMemberDialog(this);"
-											th:data-member-id="${m.id}" th:data-member-name="${m.firstName + ' ' + m.middleName + ' ' + m.lastName}"
+											th:data-member-id="${m.id}" th:data-member-name="${m.firstName + ' ' + m.lastName}"
 											style="cursor: pointer;">
 												<i class="fa fa-remove"></i>
 										</a></td>
